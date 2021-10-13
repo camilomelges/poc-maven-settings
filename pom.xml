@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>none</groupId>
+    <artifactId>none</artifactId>
+    <version>1.0.0</version>
+    <name>poc-maven-settings</name>
+    <description>Poc for settings with maven</description>
+
+    <properties>
+        <repository-user-name>YOUR_MAVEN_REPO_USERNAME</repository-user-name>]
+        <utils-version>1.0.0</utils-version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Utils dependencies -->
+            <dependency>
+                <groupId>groupId</groupId>
+                <artifactId>artifactId</artifactId>
+                <version>${utils-version}</version>
+            </dependency>
+            <!-- Utils dependencies -->
+        </dependencies>
+    </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo1.maven.org/maven2</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>ID_MAVEN_REPO example: github</id>
+            <name>${repository-user-name}</name>
+            <url>https://maven.pkg.github.com/${repository-user-name}/*</url>
+        </repository>
+    </repositories>
+
+</project>
